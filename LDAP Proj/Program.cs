@@ -7,13 +7,8 @@ class Program
     {
         try
         {
-            //Console.WriteLine("Enter ur url : ");
-            //var se = Console.ReadLine();
-            Console.WriteLine("Enter key to continiue : ");
-            Console.ReadKey();
             var se = "LDAP://192.168.20.1";
             DirectoryEntry de = new DirectoryEntry(se ?? "LDAP://localhost");
-            //DirectoryEntry de = new DirectoryEntry(se);
             DirectorySearcher searcher = new DirectorySearcher(de);
             searcher.Filter = "(&(ObjectClass=User))";
             searcher.PropertiesToLoad.Add("distinguishedName");
@@ -34,11 +29,8 @@ class Program
         }
         catch (Exception ex)
         {
-
             Console.WriteLine(ex.Message);
         }
-
-
         Console.ReadKey();
     }
 
